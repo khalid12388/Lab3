@@ -11,18 +11,17 @@ import java.util.NoSuchElementException;
  * @param <T> typen av element som lagras i listan
  * @author Khalid Abdi Hashi
  */
-
-public class LinkedList<T> implements List<T> {
+public final class LinkedList<T> implements List<T> {
 
     private Node<T> head;
     private int size;
 
-    private static class Node<T> {
+    private static final class Node<T> {
         private T element;
         private Node<T> next;
 
-        public Node(T element) {
-            this.element = element;
+        private Node(final T value) {
+            this.element = value;
         }
     }
 
@@ -32,12 +31,12 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public void add(T data) {
+    public void add(final T data) {
         add(data, size);
     }
 
     @Override
-    public void add(T data, int index) {
+    public void add(final T data, final int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
@@ -62,7 +61,7 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public T get(int index) {
+    public T get(final int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
@@ -77,7 +76,7 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public void set(T data, int index) {
+    public void set(final T data, final int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
@@ -97,7 +96,7 @@ public class LinkedList<T> implements List<T> {
     }
 
     @Override
-    public void remove(int index) {
+    public void remove(final int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
@@ -133,7 +132,7 @@ public class LinkedList<T> implements List<T> {
         return new LinkedListIterator();
     }
 
-    private class LinkedListIterator implements Iterator<T> {
+    private final class LinkedListIterator implements Iterator<T> {
 
         private Node<T> current = head;
 
