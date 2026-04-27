@@ -5,37 +5,37 @@ import java.util.Iterator;
 
 /**
  * En lista som bygger på min LinkedList och som även kan sortera elementen.
- * Sorteringsmetoderna ändrar inte originalistan utan returnerar en sorterad kopia.
+ * Sorteringsmetoderna ändrar inte originallistan utan returnerar en sorterad
+ * kopia.
  *
  * @param <T> typen av element som måste kunna jämföras
  */
-
-public class SortableLinkedList<T extends Comparable<? super T>>
+public final class SortableLinkedList<T extends Comparable<? super T>>
         implements SortableList<T> {
 
-	private List<T> storage;
+    private List<T> storage;
 
     public SortableLinkedList() {
         storage = new LinkedList<>();
     }
 
     @Override
-    public void add(T data) {
+    public void add(final T data) {
         storage.add(data);
     }
 
     @Override
-    public void add(T data, int index) {
+    public void add(final T data, final int index) {
         storage.add(data, index);
     }
 
     @Override
-    public T get(int index) {
+    public T get(final int index) {
         return storage.get(index);
     }
 
     @Override
-    public void set(T data, int index) {
+    public void set(final T data, final int index) {
         storage.set(data, index);
     }
 
@@ -45,7 +45,7 @@ public class SortableLinkedList<T extends Comparable<? super T>>
     }
 
     @Override
-    public void remove(int index) {
+    public void remove(final int index) {
         storage.remove(index);
     }
 
@@ -131,7 +131,8 @@ public class SortableLinkedList<T extends Comparable<? super T>>
         return sorted;
     }
 
-    private void mergeSortHelper(ArrayList<T> list, int left, int right) {
+    private void mergeSortHelper(final ArrayList<T> list, final int left,
+            final int right) {
         if (left < right) {
             int mid = (left + right) / 2;
 
@@ -142,7 +143,8 @@ public class SortableLinkedList<T extends Comparable<? super T>>
         }
     }
 
-    private void merge(ArrayList<T> list, int left, int mid, int right) {
+    private void merge(final ArrayList<T> list, final int left, final int mid,
+            final int right) {
 
         ArrayList<T> temp = new ArrayList<>();
 
@@ -193,7 +195,8 @@ public class SortableLinkedList<T extends Comparable<? super T>>
         return sorted;
     }
 
-    private void quickSortHelper(ArrayList<T> list, int low, int high) {
+    private void quickSortHelper(final ArrayList<T> list, final int low,
+            final int high) {
         if (low < high) {
 
             int pivotIndex = partition(list, low, high);
@@ -203,7 +206,8 @@ public class SortableLinkedList<T extends Comparable<? super T>>
         }
     }
 
-    private int partition(ArrayList<T> list, int low, int high) {
+    private int partition(final ArrayList<T> list, final int low,
+            final int high) {
 
         T pivot = list.get(high);
         int i = low - 1;
