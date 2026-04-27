@@ -3,16 +3,15 @@ package aod.lab3;
 /**
  * Interface för en enkel lista.
  * Innehåller metoder för att lägga till, hämta, ändra och ta bort element.
- * 
  * @author Khalid Abdi Hashi
  * @date 2026-04-10
  */
 public interface List<T> extends Iterable<T> {
 
 	/**
-	 * Lägger till ett element sist i listan.
-	 * @param data elementet som ska läggas till
-	 */
+	* Lägger till ett element sist i listan.
+	* @param data elementet som ska läggas till
+	*/
     void add(T data);
 
     /**
