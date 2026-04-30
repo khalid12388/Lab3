@@ -5,7 +5,7 @@ package aod.lab3;
  * Innehåller metoder för att lägga till, hämta, ändra och ta bort element.
  *
  * @author Khalid Abdi Hashi
- * @date 2026-04-10
+ * @date 2026-04-23
  */
 public interface List<T> extends Iterable<T> {
 
